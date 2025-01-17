@@ -14,11 +14,11 @@ on:
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/mominqimiang/device_xiaomi_pearl_twrp'
+        default: 'https://github.com/haitian8181/android_device_xiaomi_pearl_twrp'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
-        default: 'A13'
+        default: 'a14'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
