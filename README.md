@@ -1,39 +1,39 @@
-### TWRP device tree for Xiaomi 13T (aristotle)
+### TWRP device tree for Redmi Note 12T Pro (pearl)
 
 =========================================
 
-The Xiaomi 13T (codenamed _"aristotle"_) is a high-end, mid-range smartphone from Xiaomi.
+The Redmi Note 12T Pro (codenamed _"pearl"_) is a high-end, mid-range smartphone from Xiaomi.
 
-It was released in September 2023.
+It was released in May 2023.
 
 ## Device specifications
 
 Basic   | Spec Sheet
 -------:|:-------------------------
 CPU     | Octa-core CPU with 4x Arm Cortex-A78 up to 3.1GHz
-Chipset | Mediatek Dimensity 8200
+Chipset | Mediatek Dimensity 8200-Ultra
 GPU     | Mali-G610 MC6
-Memory  | 8/12 GB RAM (LPDDR5T 9600Mbps)
-Shipped Android Version | 13
-Storage | 256 GB (UFS 3.1)
-Battery | Li-Po 5000 mAh, non-removable
-Display | 1220 x 2712 pixels, 6.67 inches, 60/120/144 hz
+Memory  | 8/12 GB RAM (LPDDR5 6400Mbps)
+Shipped Android Version | 13 with MIUI 14
+Storage | 128/256/512 (UFS 3.1)
+Battery | Non-removable Li-Po 5080 mAh battery
+Display | 1080 x 2460 pixels, 6.6 inches, 30/48/50/60/90/120/144 Hz, IPS LCD
 
-![Xiaomi 13T](https://i02.appmifile.com/524_operator_sg/14/08/2023/936823ab29ba43b0bf4e42f09d424903.png)
+![Redmi Note 12T Pro](https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202305291422_e96776c7e1e35cebb454457c3344d3cd.png)
 
 ## Features
 
 Works:
 
-- [X] ADB
-- [X] Partially Decryption (Android 14)
-- [X] Display
-- [X] Fasbootd
-- [X] Flashing
-- [X] MTP
-- [X] Sideload
-- [X] USB OTG
-- [X] Vibrator
+- [] ADB
+- [] Partially Decryption (Android 14)
+- [] Display
+- [] Fasbootd
+- [] Flashing
+- [] MTP
+- [] Sideload
+- [] USB OTG
+- [] Vibrator
 
 ## Compile
 
@@ -47,7 +47,7 @@ repo sync -j$(nproc --all)
 Then add these projects to .repo/manifest.xml:
 
 ```xml
-<project path="device/xiaomi/aristotle" name="JonesqPacMan/android_device_xiaomi_aristotle_TWRP" remote="github" revision="TWRP-12.1_A13" />
+<project path="device/xiaomi/pearl" name="haitian8181/device_xiaomi_apearl" remote="github" revision="TWRP-12.1_A13" />
 ```
 
 Finally execute these:
