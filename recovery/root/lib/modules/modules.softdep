@@ -1,0 +1,4 @@
+# Soft dependencies extracted from modules themselves.
+softdep slbc_mt6895 pre: tinysys-scmi.ko
+softdep mt6895_dcm pre:mtk_dcm.ko
+softdep mtk_mm_heap pre: mi_page_pool

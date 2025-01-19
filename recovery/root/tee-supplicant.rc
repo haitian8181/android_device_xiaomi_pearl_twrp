@@ -1,0 +1,33 @@
+# For MTK DRM integration:
+service tee-supplicant /vendor/bin/tee-supplicant
+    class core
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+
+on fs
+    write /proc/bootprof "init tee-supplicant"
+   # set SELinux security contexts on upgrade or policy update
+    restorecon_recursive /mnt/vendor/persist
+    chmod 0660 /dev/tee0
+    chmod 0660 /dev/teepriv0
+    chown system system /dev/tee0
+    chown system system /dev/teepriv0
+    chmod 0660 /dev/rpmb0
+    chmod 0660 /dev/mmcblk0rpmb
+    chmod 0660 /dev/0:0:0:49476
+    chmod 0660 /dev/ufs-bsg0
+    chmod 0666 /dev/kmsg
+    chown system system /dev/rpmb0
+    chown system system /dev/mmcblk0rpmb
+    chown system system /dev/0:0:0:49476
+    chown system system /dev/ufs-bsg0
+#    enable vendor.keymaster-4-0-mitee
+    enable vendor.keymint-mitee
+    start tee-supplicant
+    mkdir /mnt/vendor/persist/data 0755 system system
+    setprop vendor.teefs_state ready
+    setprop ro.hardware.gatekeeper mitee
+    
