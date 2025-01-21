@@ -1,0 +1,17 @@
+service miteelog /vendor/bin/miteelog
+    class core
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+on post-fs-data
+    mkdir /data/vendor/mitee
+    chmod 0755 /data/vendor/mitee
+    chown system system /data/vendor/mitee
+    mkdir /data/vendor/thh
+    chmod 0755 /data/vendor/thh
+    chown system system /data/vendor/thh
+    write /proc/bootprof "init miteelog"
+    start miteelog
+    
