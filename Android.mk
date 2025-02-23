@@ -16,6 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),aristotle)
+ifeq ($(TARGET_DEVICE),pearl)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
