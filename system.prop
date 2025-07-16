@@ -19,3 +19,6 @@ ro.vendor.mediatek.platform=MT6895
 
 # Timezone
 persist.sys.timezone="Asia/Jakarta"
+
+# Gatekeeper
+ro.hardware.gatekeeper=mitee
