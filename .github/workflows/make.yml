@@ -132,7 +132,7 @@ jobs:
         if_true: twrp
         if_false: omni
 
-    - name: Sync Device Dependencies
+    - name: 同步设备所需要的依赖
       run: |
         bash ${GITHUB_WORKSPACE}/scripts/convert.sh ${{ github.event.inputs.DEVICE_PATH }}/${{ steps.buildtree.outputs.value }}.dependencies
         repo sync -j$(nproc --all)
