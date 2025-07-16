@@ -21,4 +21,4 @@ ro.vendor.mediatek.platform=MT6895
 persist.sys.timezone="Asia/Jakarta"
 
 # Gatekeeper
-ro.hardware.gatekeeper=beanpod
+ro.hardware.gatekeeper=mitee
