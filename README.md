@@ -1,4 +1,4 @@
-### OrangeFox(OFRP) device tree for Redmi Note 12T Pro (pearl)
+### TWRP device tree for Redmi Note 12T Pro (pearl)
 =========================================
 
 [简体中文](README_CN.md)
@@ -37,6 +37,29 @@ Works:
 - [X] Vibrator
 - [X] Touch
 
+## Compile
+
+First checkout minimal twrp with aosp tree:
+
+```
+repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+repo sync -j$(nproc --all)
+```
+
+Then add these projects to .repo/manifest.xml:
+
+```xml
+<project path="device/xiaomi/pearl" name="haitian8181/android_device_xiaomi_pearl" remote="github" revision="a14" />
+```
+
+Finally execute these:
+
+```
+source build/envsetup.sh
+repopick <needed patch>
+lunch twrp_pearl-eng
+mka vendorbootimage -j$(nproc --all)
+```
 ## To use it:
 
 ```

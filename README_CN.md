@@ -1,4 +1,4 @@
-### OrangeFox Recovery 设备树 | 红米 Note 12T Pro (Pearl)
+### TWRP 设备树 | 红米 Note 12T Pro (Pearl)
 [English Version](README.md)
 
 ## 设备参数信息
@@ -30,6 +30,29 @@ GPU     | Mali-G610 MC6
 - [X] 震动
 - [X] 触摸
 
+## 我该如何编译它？
+
+首先使用以下命令同步最小版本的TWRP
+
+```
+repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+repo sync -j$(nproc --all)
+```
+
+然后将这些项目添加到.repo/manifest.xml：
+
+```xml
+<project path="device/xiaomi/pearl" name="haitian8181/android_device_xiaomi_pearl" remote="github" revision="a14" />
+```
+
+最后执行以下命令
+
+```
+source build/envsetup.sh
+repopick <needed patch>
+lunch twrp_pearl-eng
+mka vendorbootimage -j$(nproc --all)
+```
 ## 我该如何刷入？
 
 使用以下命令刷入编译好的rec
