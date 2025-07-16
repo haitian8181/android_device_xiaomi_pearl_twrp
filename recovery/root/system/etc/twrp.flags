@@ -8,12 +8,12 @@
 /cache                     ext4                /dev/block/by-name/rescue                             flags=display="Cache [ rescue ]";wipeingui;wipeduringfactoryreset
 
 # Additional
-/mi_ext                    ext4                /dev/block/mapper/mi_ext                               flags=display="MI EXT";logical
-/mi_ext                    erofs                /dev/block/mapper/mi_ext                               flags=display="MI EXT";logical
+/mi_ext                    ext4                /dev/block/mapper/mi_ext                               flags=display="mi_ext";logical
+/mi_ext                    erofs                /dev/block/mapper/mi_ext                               flags=display="mi_ext";logical
 
 # Cust Partitions
-/cust                                   ext4                        /dev/block/by-name/cust                            flags=display="Customization Preload [ cust ]"
-/cust_image                       emmc                      /dev/block/by-name/cust                             flags=display="Customization Preload [ cust ]";backup=1;flashimg=1
+/cust                                   ext4                        /dev/block/by-name/cust                            flags=display="cust"
+/cust_image                       emmc                      /dev/block/by-name/cust                             flags=display="cust";backup=1;flashimg=1
 
 # Super Partitions
 /super                                emmc                     /dev/block/by-name/super                           flags=display="Super Image [ super ]";backup=1;flashimg=1
