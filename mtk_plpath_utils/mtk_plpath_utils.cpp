@@ -30,8 +30,6 @@ using namespace android::dm;
 #define UFS_DEV "/sys/class/block/sda/uevent"
 #define LINK_PL_A "/dev/block/by-name/preloader_raw_a"
 #define LINK_PL_B "/dev/block/by-name/preloader_raw_b"
-#define LINK1_PL_A "/dev/block/platform/bootdevice/by-name/preloader_raw_a"
-#define LINK1_PL_B "/dev/block/platform/bootdevice/by-name/preloader_raw_b"
 #define DM_BLK_SIZE (512)
 
 #define PLHEAD "MMM"
@@ -145,8 +143,6 @@ int create_pl_path(void) {
 
   create_pl_link(LINK_PL_A, path_a);
   create_pl_link(LINK_PL_B, path_b);
-  create_pl_link(LINK1_PL_A, path_a);
-  create_pl_link(LINK1_PL_B, path_b);
   return 0;
 }
 
