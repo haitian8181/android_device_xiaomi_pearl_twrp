@@ -27,7 +27,7 @@ Display | 1080 x 2460 pixels, 6.6 inches, 30/48/50/60/90/120/144 Hz, IPS LCD
 Works:
 
 - [X] ADB
-- [X] Partially Decryption (Android 14)
+- [X] Decryption (Android 14)
 - [X] Display
 - [X] Fasbootd
 - [X] Flashing
