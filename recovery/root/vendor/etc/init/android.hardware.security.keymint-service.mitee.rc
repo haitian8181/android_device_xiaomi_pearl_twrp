@@ -1,0 +1,5 @@
+service vendor.keymint-mitee /vendor/bin/hw/android.hardware.security.keymint@1.0-service.mitee
+	class hal
+	user root
+	group root drmrpc
+	seclabel u:r:recovery:s0
