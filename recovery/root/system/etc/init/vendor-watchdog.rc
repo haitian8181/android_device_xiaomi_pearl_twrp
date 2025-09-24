@@ -1,0 +1,6 @@
+service vendor-watchdog /system/bin/vendor_watchdog
+	class core
+	user root
+	group root
+	oneshot
+	seclabel u:r:recovery:s0

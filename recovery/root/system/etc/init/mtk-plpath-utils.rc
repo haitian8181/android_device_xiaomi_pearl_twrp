@@ -1,0 +1,6 @@
+service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
+    user root
+    group root system
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0

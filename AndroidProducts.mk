@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 The TWRP Open Source Project
+# Copyright (C) 2025 The TWRP Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,4 +16,7 @@
 
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_pearl.mk
 
-COMMON_LUNCH_CHOICES := twrp_pearl-eng
+COMMON_LUNCH_CHOICES := \
+    twrp_pearl-user \
+    twrp_pearl-userdebug \
+    twrp_pearl-eng
