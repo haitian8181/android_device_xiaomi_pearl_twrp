@@ -20,7 +20,7 @@ GPU     | Mali-G610 MC6
 
 正常工作的:
 - [X] ADB调试
-- [X] data分区部分解密 (Android 14)
+- [X] data解密 (Android 14)
 - [X] 屏幕显示
 - [X] Fasbootd模式
 - [X] 卡刷模式
