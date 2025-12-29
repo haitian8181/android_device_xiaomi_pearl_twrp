@@ -169,6 +169,7 @@ mtk-swpm-perf-arm-pmu.ko
 cache-parity.ko
 simtray.ko
 mtk-socinfo.ko
+miev.ko
 mkp.ko
 bootprof.ko
 dbgtop-drm.ko
@@ -340,3 +341,4 @@ mtk-swpm-perf-arm-pmu.ko
 cache-parity.ko
 simtray.ko
 mtk-socinfo.ko
+miev.ko

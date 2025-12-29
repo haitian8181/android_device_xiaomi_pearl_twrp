@@ -183,6 +183,7 @@ simtray.ko
 sec.ko
 mtk-socinfo.ko
 emi-mpu-hook-v1.ko
+miev.ko
 gpu_plaid.ko
 xiaomi_touch.ko
 nvt36672c.ko
@@ -372,6 +373,7 @@ simtray.ko
 sec.ko
 mtk-socinfo.ko
 emi-mpu-hook-v1.ko
+miev.ko
 gpu_plaid.ko
 xiaomi_touch.ko
 nvt36672c.ko
