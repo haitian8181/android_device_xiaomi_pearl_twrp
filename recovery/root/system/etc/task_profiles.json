@@ -171,19 +171,21 @@
         }
       ]
     },
+// MIUI ADD: Performance_SpeedUI
     {
-      "Name": "UiPerformance",
+      "Name": "MISFPerformance",
       "Actions": [
         {
           "Name": "JoinCgroup",
           "Params":
           {
             "Controller": "cpu",
-            "Path": "ui"
+            "Path": "misf"
           }
         }
       ]
     },
+// END Performance_SpeedUI
     {
       "Name": "RealtimePerformance",
       "Actions": [
@@ -408,18 +410,33 @@
       ]
     },
     {
-      "Name": "ProcessCapacityUI",
+        "Name": "MultisenceCapacityLow",
+        "Actions": [
+          {
+            "Name": "JoinCgroup",
+            "Params":
+            {
+              "Controller": "cpuset",
+              "Path": "multisence-unfocus"
+            }
+          }
+        ]
+      },
+// MIUI ADD: Performance_SpeedUI
+    {
+      "Name": "ProcessCapacityMISF",
       "Actions": [
         {
           "Name": "JoinCgroup",
           "Params":
           {
             "Controller": "cpuset",
-            "Path": "ui"
+            "Path": "misf"
           }
         }
       ]
     },
+// END Performance_SpeedUI
     {
       "Name": "ServiceCapacityLow",
       "Actions": [
@@ -456,32 +473,6 @@
           {
             "Controller": "cpuset",
             "Path": "camera-daemon"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "CameraProcessCapacityLow",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpuset",
-            "Path": "camera-background"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "CameraProcessCapacityLower",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpuset",
-            "Path": "camera-background/limit"
           }
         }
       ]
@@ -674,6 +665,46 @@
         }
       ]
     },
+    // MIUI ADD: Performance_MemoryEnhance
+    {
+      "Name": "MemoryProtectedProcess",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "memory",
+            "Path": "protected-app"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "MemoryProtectedProcess",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "memory",
+            "Path": "protected-app"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "MemoryProtectedProcess",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "memory",
+            "Path": "protected-app"
+          }
+        }
+      ]
+    },
     {
       "Name": "MemoryFreezeProcess",
       "Actions": [
@@ -687,6 +718,7 @@
         }
       ]
     }
+    // END Performance_MemoryEnhance
   ],
 
   "AggregateProfiles": [
@@ -711,16 +743,12 @@
       "Profiles": [ "ServicePerformance", "LowIoPriority", "TimerSlackNormal" ]
     },
     {
-      "Name": "VMCompilationPerformance",
+      "Name": "SCHED_SP_COMPUTE",
       "Profiles": [ "HighPerformance", "ProcessCapacityHigh", "LowIoPriority", "TimerSlackNormal" ]
     },
     {
       "Name": "SCHED_SP_RT_APP",
       "Profiles": [ "RealtimePerformance", "MaxIoPriority", "TimerSlackNormal" ]
-    },
-    {
-      "Name": "SCHED_SP_UI",
-      "Profiles": [ "UiPerformance" ]
     },
     {
       "Name": "CPUSET_SP_DEFAULT",
@@ -739,10 +767,6 @@
       "Profiles": [ "MaxPerformance", "ProcessCapacityMax", "MaxIoPriority", "TimerSlackNormal" ]
     },
     {
-      "Name": "CPUSET_SP_UI",
-      "Profiles": [ "ProcessCapacityUI", "UiPerformance" ]
-    },
-    {
       "Name": "CPUSET_SP_SYSTEM",
       "Profiles": [ "ServiceCapacityLow", "TimerSlackNormal" ]
     },
@@ -751,20 +775,20 @@
       "Profiles": [ "ServiceCapacityRestricted", "TimerSlackNormal" ]
     },
     {
+        "Name": "CPUSET_SP_MULTISENCE_UNFOCUS",
+        "Profiles": [ "MultisenceCapacityLow" ]
+    },
+    {
       "Name": "Dex2OatBootComplete",
       "Profiles": [ "Dex2oatPerformance", "LowIoPriority", "TimerSlackHigh" ]
     },
     {
+      "Name": "Dex2OatBackground",
+      "Profiles": [ "Dex2OatBootComplete" ]
+    },
+    {
       "Name": "OtaProfiles",
       "Profiles": [ "ServiceCapacityLow", "LowIoPriority", "HighEnergySaving" ]
-    },
-    {
-      "Name": "CPUSET_SP_CAMERA_BACKGROUND",
-      "Profiles": [ "CameraProcessCapacityLow"]
-    },
-    {
-      "Name": "CPUSET_SP_CAMERA_LIMIT_BACKGROUND",
-      "Profiles": [ "HighEnergySaving", "CameraProcessCapacityLower", "LowIoPriority", "TimerSlackHigh" ]
     }
   ]
 }
