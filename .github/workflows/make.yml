@@ -14,11 +14,11 @@ on:
       DEVICE_TREE_URL:
         description: '设备树源码'
         required: true
-        default: 'https://github.com/haitian8181/android_device_xiaomi_pearl_twrp'
+        default: 'https://github.com/mytiantian001/android_device_xiaomi_pearl_twrp'
       DEVICE_TREE_BRANCH:
         description: '设备树分支'
         required: true
-        default: 'a15'
+        default: 'a16-OS3'
       DEVICE_PATH:
         description: '设备树路径'
         required: true
